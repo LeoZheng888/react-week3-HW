@@ -41,7 +41,7 @@ const handleLogin =()=>{
 axios.post(`${import.meta.env.VITE_BASE_URL}/v2/admin/signin`,account)
 .then((res) => {
   const {token ,expired} =res.data;
-  console.log(token ,expired)
+  // console.log(token ,expired)
   document.cookie = `hexToken=${token}; expires=${new Date (expired)}`;
 
   axios.defaults.headers.common['Authorization'] = token;
